@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: dev.mirrord.eclipse
+Bundle-SymbolicName: dev.mirrord.eclipse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: dev.mirrord.eclipse.Activator
+Bundle-ClassPath: .
+Bundle-Vendor: Michael Maenz
+Bundle-Description: mirrord eclipse integration
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Export-Package: dev.mirrord.eclipse.api
+Automatic-Module-Name: dev.mirrord.eclipse
+Import-Package: org.eclipse.core.resources;resolution:=optional,
+ org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
+ org.eclipse.debug.core,
+ org.eclipse.debug.core.model,
+ org.eclipse.debug.ui,
+ org.eclipse.jface.dialogs,
+ org.eclipse.jface.preference,
+ org.eclipse.jface.viewers,
+ org.eclipse.swt,
+ org.eclipse.swt.events,
+ org.eclipse.swt.layout,
+ org.eclipse.swt.widgets,
+ org.eclipse.ui,
+ org.eclipse.ui.plugin,
+ org.osgi.framework

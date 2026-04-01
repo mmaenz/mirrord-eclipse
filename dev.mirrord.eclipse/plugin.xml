@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <!-- ============================================================ -->
+    <!-- Launch Configuration Type                                    -->
+    <!-- Appears as "mirrord" in Run → Debug Configurations...        -->
+    <!-- ============================================================ -->
+    <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+        <launchConfigurationType
+            id="dev.mirrord.eclipse.launchConfigurationType"
+            name="mirrord"
+            delegate="dev.mirrord.eclipse.MirrordLaunchDelegate"
+            modes="run,debug"
+            public="true"
+            description="Run or debug a launch configuration through the mirrord Kubernetes proxy">
+        </launchConfigurationType>
+    </extension>
+
+    <!-- ============================================================ -->
+    <!-- Launch Configuration Type Icon                               -->
+    <!-- ============================================================ -->
+    <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+        <launchConfigurationTypeImage
+            id="dev.mirrord.eclipse.launchConfigurationTypeImage"
+            configTypeID="dev.mirrord.eclipse.launchConfigurationType"
+            icon="icons/mirrord16.png">
+        </launchConfigurationTypeImage>
+    </extension>
+
+    <!-- ============================================================ -->
+    <!-- Launch Configuration Tab Group                               -->
+    <!-- Defines the tabs shown in the Debug Configurations dialog    -->
+    <!-- ============================================================ -->
+    <extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup
+            id="dev.mirrord.eclipse.tabGroup"
+            type="dev.mirrord.eclipse.launchConfigurationType"
+            class="dev.mirrord.eclipse.ui.MirrordTabGroup"
+            description="Configure the mirrord Kubernetes proxy and the wrapped launch configuration">
+        </launchConfigurationTabGroup>
+    </extension>
+
+    <!-- ============================================================ -->
+    <!-- Preference Page                                              -->
+    <!-- ============================================================ -->
+    <extension point="org.eclipse.ui.preferencePages">
+        <page
+            id="dev.mirrord.eclipse.preferences"
+            name="mirrord"
+            class="dev.mirrord.eclipse.ui.MirrordPreferencePage">
+        </page>
+    </extension>
+
+</plugin>
